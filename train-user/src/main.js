@@ -9,11 +9,14 @@ import { Lazyload } from 'vant';
 import axios from 'axios'
 import qs from 'qs'
 import md5 from 'js-md5'
+import BMap from 'vue-baidu-map'
 
+
+Vue.use(BMap, {ak: 'Lyln3Ln9wDDwRvU6jhK8wPweg9Gku7nu'});
 Vue.prototype.$md5 = md5;
 Vue.prototype.$qs = qs
 Vue.prototype.$axios = axios
-Vue.prototype.$axios.defaults.baseURL = 'http://localhost:8081/'
+// Vue.prototype.$axios.defaults.baseURL = 'http://localhost:8081/'
     //Lazyload 是 Vue 指令，使用前需要对指令进行注册
 Vue.use(Lazyload)
 Vue.use(Vant);

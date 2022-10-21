@@ -15,8 +15,8 @@
     "qs": "^6.9.4",
     "vant": "^2.8.5",
     "vue": "^2.6.11",
-    "vue-router": "^3.2.0",
-    "yarn": "^1.22.19"
+    "vue-baidu-map": "^0.21.22",
+    "vue-router": "^3.2.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
