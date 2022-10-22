@@ -6,7 +6,7 @@ import VueRouter from 'vue-router'
 import Index from '../views/Index.vue'
 // import Order from '../views/Order.vue'
 import Mine from '../views/Mine.vue'
-// import Citylist from '../views/CityList.vue'
+import Citylist from '../views/CityList.vue'
 import Querytrain from '../views/QueryTrain.vue'
 // import ConfirmOrder from '../views/ConfirmOrder.vue'
 // import SelectUser from '../views/SelectUser.vue'
@@ -26,11 +26,11 @@ const routes = [
     //     name: 'register',
     //     component: Register
     // },
-    // {
-    //     path: '/citylist',
-    //     name: 'citylist',
-    //     component: Citylist
-    // },
+    {
+        path: '/citylist',
+        name: 'citylist',
+        component: Citylist
+    },
     {
         path: '/querytrain',
         name: 'querytrain',
