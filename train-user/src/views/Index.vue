@@ -296,9 +296,6 @@ export default {
   .van-cell {
     background-color: #fff;
     color: rgb(170, 165, 165);
-    .van-cell__title{
-      
-    }
     .van-cell__value{
       text-align: center;
     }
