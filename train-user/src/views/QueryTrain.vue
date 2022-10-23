@@ -6,7 +6,7 @@
       </template>
     </van-nav-bar>
     <div class="traindate">{{this.traindate}}</div>
-    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+    <div class="trainList">
       <!-- 判断是否为空 -->
       <div v-if="orderlist.length!=0">
         <div class="text item" v-for="(item,index) in orderlist" :key="index" @click="detail(index)">
@@ -29,13 +29,13 @@
             </van-row>
           </el-card>
         </div>
-        <div class="fill"></div>
+        <!-- <div class="fill"></div> -->
       </div>
       <!-- 没有火车信息 -->
       <div v-else>
         <van-empty description="试试乘坐其他班次吧" />
       </div>
-    </van-pull-refresh>
+    </div>
     <div class="test"></div>
   </div>
 </template>
@@ -46,8 +46,8 @@ export default {
     return {
       // 标志位
       showflag: true,
-      startcity: '杭州',
-      endcity: '宁波',
+      startcity: '北京',
+      endcity: '杭州',
       traintype: 0,
       count: 0,
       isLoading: false,
@@ -55,15 +55,67 @@ export default {
       orderlist: [{
         id: '',
         name: 'G100',
-        startcity: '杭州',
-        starttime: '16.37',
-        endcity: '绍兴',
-        endtime: '17:35',
-        duration: '23分钟',
-        fnum: '33',
+        startcity: '北京',
+        starttime: '12:37',
+        endcity: '杭州',
+        endtime: '13:35',
+        duration: '58分钟',
+        fnum: '32',
         snum: '44',
-        fprice: 33,
-        sprice: 19
+        fprice: 196,
+        sprice: 123
+      },
+      {
+        id: '',
+        name: 'G101',
+        startcity: '北京',
+        starttime: '15:37',
+        endcity: '杭州',
+        endtime: '16:35',
+        duration: '58分钟',
+        fnum: '63',
+        snum: '4',
+        fprice: 200,
+        sprice: 123
+      },
+      {
+        id: '',
+        name: 'G102',
+        startcity: '北京',
+        starttime: '18:37',
+        endcity: '杭州',
+        endtime: '19:35',
+        duration: '58分钟',
+        fnum: '39',
+        snum: '42',
+        fprice: 150,
+        sprice: 120
+      },
+      {
+        id: '',
+        name: 'G103',
+        startcity: '北京',
+        starttime: '20:37',
+        endcity: '杭州',
+        endtime: '21:35',
+        duration: '58分钟',
+        fnum: '63',
+        snum: '43',
+        fprice: 101,
+        sprice: 68
+      },
+      {
+        id: '',
+        name: 'G104',
+        startcity: '北京',
+        starttime: '22:37',
+        endcity: '杭州',
+        endtime: '23:35',
+        duration: '58分钟',
+        fnum: '63',
+        snum: '43',
+        fprice: 101,
+        sprice: 68
       }],
     };
   },
@@ -78,14 +130,14 @@ export default {
     this.trainquery();
   },
   methods: {
-    onRefresh() {
-      this.trainquery();
-      setTimeout(() => {
-        this.$toast('刷新成功');
-        this.isLoading = false;
-        this.count++;
-      }, 1000);
-    },
+    // onRefresh() {
+    //   this.trainquery();
+    //   setTimeout(() => {
+    //     this.$toast('刷新成功');
+    //     this.isLoading = false;
+    //     this.count++;
+    //   }, 1000);
+    // },
     back() {
       this.$router.go(-1);
     },
@@ -172,9 +224,10 @@ export default {
   z-index: 1;
 }
 
-.van-pull-refresh {
-  height: 100%;
-  padding-top: 70px;
+.trainList{
+  padding-top: 80px;
+  height: 580px;
+  overflow: scroll;
 }
 
 .box-card {

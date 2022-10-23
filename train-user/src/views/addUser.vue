@@ -9,8 +9,8 @@
             </template>
         </van-nav-bar>
         <div class="input-item">
-            <van-field v-model="name" label="姓名" />
-            <van-field v-model="code" label="身份证号" />
+            <van-field v-model="name" label="姓名" placeholder="请输入真实姓名" />
+            <van-field v-model="code" label="身份证号" placeholder="请输入身份证号" />
             <van-checkbox v-model="type">是否学生</van-checkbox>
         </div>
         <van-button @click="saveUser" class="save-btn" type="primary" block>保存</van-button>
@@ -65,6 +65,7 @@ export default {
 
     .van-checkbox {
         padding: 10px 16px;
+        justify-content: center;
     }
 
     .save-btn {

@@ -1,16 +1,18 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
-// import Register from '../views/register.vue'
-// import Tabbar from '../views/tabbar.vue'
+import Register from '../views/Register.vue'
 import Index from '../views/Index.vue'
-// import Order from '../views/Order.vue'
+import MyOrder from '../views/MyOrder.vue'
+import MyServe from '../views/Serve.vue'
+import About from '../views/About.vue'
 import Mine from '../views/Mine.vue'
 import Citylist from '../views/CityList.vue'
 import Querytrain from '../views/QueryTrain.vue'
 import Setting from "../views/Setting";
 import ConfirmOrder from '../views/ConfirmOrder.vue'
 import SelectUser from '../views/SelectUser.vue'
+import AddUser from '../views/AddUser.vue'
 import AddUser from '../views/addUser.vue'
 import MyOrder from "../views/MyOrder";
 import Serve from "../views/Serve";
@@ -26,11 +28,11 @@ const routes = [
         name: 'login',
         component: Login
     },
-    // {
-    //     path: '/register',
-    //     name: 'register',
-    //     component: Register
-    // },
+    {
+        path: '/register',
+        name: 'register',
+        component: Register
+    },
     {
         path: '/citylist',
         name: 'citylist',
@@ -65,6 +67,22 @@ const routes = [
         path: '/index',
         name: 'index',
         component: Index,
+    },
+    {
+        path: '/myorder',
+        name: 'myOrder',
+        component: MyOrder,
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: About,
+    },
+    {
+        path: '/myserve',
+        name: 'myServe',
+        component: MyServe,
+    },
     },
     //{
     //     path: '/order',
@@ -101,26 +119,8 @@ const routes = [
         name: 'adduser',
         component: AddUser,
     }
-    // {
-    //     path: '/tabbar',
-    //     name: 'tabbar',
-    //     component: Tabbar,
-    //     children: [{
-    //         path: '/index',
-    //         name: 'index',
-    //         component: Index,
-    //     }, {
-    //         path: '/order',
-    //         name: 'order',
-    //         component: Order,
-    //     }, {
-    //         path: '/mine',
-    //         name: 'mine',
-    //         component: Mine,
-    //     }]
-    // }
-
 ]
+
 
 
 const router = new VueRouter({

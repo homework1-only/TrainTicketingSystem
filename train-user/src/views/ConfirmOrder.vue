@@ -38,6 +38,7 @@
             <el-radio-button label="2">二等 ￥{{order.sprice}}</el-radio-button>
           </el-radio-group>
         </el-card>
+        
       </div>
       <van-field readonly clickable name="picker" :value="value" label="选择乘客" placeholder="点击添加乘车人"
         @click="selectuser" />
@@ -124,48 +125,6 @@ export default {
     onSubmit() {
       // 提交延迟
       this.$toast.loading("提交中");
-      // let price;
-      // let seattype;
-      // if (JSON.parse(localStorage.getItem('selectuser')) == null) {
-      //   this.$toast.fail('请输入乘车人')
-      // }
-      // let id = JSON.parse(localStorage.getItem('selectuser')).id;
-
-      // let orderId = JSON.parse(sessionStorage.getItem('user')).id;
-      // if (this.radio == 1) {
-      //   price = this.order.fprice * this.discount;
-      //   seattype = 1;
-      // } else {
-      //   price = this.order.fprice * this.discount;
-      //   price = this.order.sprice;
-      //   seattype = 2;
-      // }
-      // let that = this;
-      //接口查询
-      // this.$axios({
-      //   method: 'post',
-      //   url: '/order/submitorder',
-      //   data: {
-      //     price: price,
-      //     traindate: this.traindate,
-      //     userId: id,
-      //     trainId: this.order.id,
-      //     seattype: seattype,
-      //     orderId: orderId
-      //   }
-      // }).then(function (res) {
-      //   if (res.data.code == 200) {
-      //     console.log("插入成功");
-      //     //跳转的页面写在此处             
-      //     that.$router.push('index');
-      //   } else if (res.data.code == 501) {
-      //     that.$toast("该类票已经售罄");
-      //   } else if (res.data.code == 303) {
-      //     that.$toast("该用户审核未通过");
-      //   }
-      // }).catch(function (error) {
-      //   console.log(error);
-      // });
       // 延迟跳转
       const timejump = 1;
       if (!this.timer) {
@@ -176,7 +135,7 @@ export default {
             this.count--;
           } else {
             //this.show = true;
-            this.$router.replace("index");
+            this.$router.replace("myorder");
             clearInterval(this.timer);
             this.timer = null;
           }
