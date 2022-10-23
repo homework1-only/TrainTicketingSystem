@@ -39,27 +39,24 @@
         </div>
         <!-- 天气 -->
         <div class="weather">
-          <div class="text">Hi,test11,您当前城市为{{LocationCity}}</div>
+          <div class="text">Hi,{{username}},您当前城市为{{LocationCity}}</div>
           <div class="cityWeather">未来七天天气</div>
           <div class="weatherList" v-for="item in weather" :key="item.date">
             <div class="dayItem">{{item.day}}</div>
             <div class="weatherItem">{{item.wea}}</div>
           </div>
-
         </div>
       </div>
-
-
     </div>
   </div>
 </template>
 
 <script>
-// import getCurrentCityName from '@/utils/getLocation'
 
 export default {
   data() {
     return {
+      username: "",
       LocationCity: "当前城市",
       weather: {},
       backgroundColor: 'transparent',
@@ -81,12 +78,10 @@ export default {
     }
   },
   mounted() {
-    //首先，在mounted钩子window添加一个滚动滚动监听事件
-    window.addEventListener("scroll", this.handleScroll);
     this.getCurrentCity();
   },
   created() {
-    // alert(returnCitySN['cip'] + returnCitySN['cname']);
+    this.username = JSON.parse(sessionStorage.getItem("user")).username;
     if (sessionStorage.getItem("startcity") != null) {
       this.startcity = sessionStorage.getItem("startcity");
     }
@@ -112,31 +107,10 @@ export default {
         },
         data: []
       }).then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         this.LocationCity = res.data.city;
         this.weather = res.data.data;
-        // console.log(this.weather);
       });
-      // getCurrentCityName().then((city) => {
-      //   this.LocationCity = city;  //顺利的话能在控制台打印出当前城市
-
-      // })
-    },
-    //然后在方法中，添加这个handleScroll方法来获取滚动的位置
-    handleScroll() {
-      let scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-      //let offsetTop = document.querySelector("#searchBar").offsetTop;
-      //设置背景颜色的透明读
-      if (scrollTop) {
-        this.backgroundColor = `rgba(0, 170, 238,${scrollTop / (scrollTop + 40)})`;
-      } else if (scrollTop == 0) {
-        this.backgroundColor = "transparent";
-      }
-    },
-    //由于是在整个window中添加的事件，所以要在页面离开时摧毁掉，否则会报错
-    beforeDestroy() {
-      window.removeEventListener("scroll", this.handleScroll);
     },
     goMine() {
       this.$router.push("mine");
@@ -160,10 +134,6 @@ export default {
     onConfirm(date) {
       this.show = false;
       this.date = this.formatDate(date);
-    },
-    search() {
-      this.$toast("尽请期待");
-
     },
     selectcity(name) {
       this.$router.push({
@@ -212,10 +182,6 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.index {
-  // margin-bottom: 40px;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -262,9 +228,7 @@ export default {
   img[lazy="loaded"] {
     width: 100%;
     height: 100%;
-    // border-radius: 0% 0% 10% 10%;
   }
-
 }
 
 .card-back {
