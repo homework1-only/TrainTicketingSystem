@@ -28,8 +28,6 @@
               <van-col span="7" offset="9">二等：{{item.snum}} 张</van-col>
             </van-row>
           </el-card>
-
-
         </div>
         <div class="fill"></div>
       </div>
@@ -37,7 +35,6 @@
       <div v-else>
         <van-empty description="试试乘坐其他班次吧" />
       </div>
-
     </van-pull-refresh>
     <div class="test"></div>
   </div>
@@ -79,7 +76,6 @@ export default {
       this.traintype = sessionStorage.getItem('traintype');
     }
     this.trainquery();
-
   },
   methods: {
     onRefresh() {
@@ -100,30 +96,30 @@ export default {
         name: 'confirmorder',
       })
     },
-    trainquery() {
-      // 接口查询
-      let that = this;
-      this.$axios({
-        method: 'get',
-        url: '/train/trainticketquery',
-        params: {
-          startcity: this.startcity,
-          endcity: this.endcity,
-          // 日期
-          traindate: this.traindate,
-          traintype: this.traintype
-        }
-      }).then(function (res) {
-        // console.log(res);
-        if (res.data.code == 200) {
-          that.orderlist = res.data.data;
-          that.showflag = true;
-        }
-      }).catch(function (error) {
-        console.log(error);
-      });
+    // trainquery() {
+    //   // 接口查询
+    //   let that = this;
+    //   this.$axios({
+    //     method: 'get',
+    //     url: '/train/trainticketquery',
+    //     params: {
+    //       startcity: this.startcity,
+    //       endcity: this.endcity,
+    //       // 日期
+    //       traindate: this.traindate,
+    //       traintype: this.traintype
+    //     }
+    //   }).then(function (res) {
+    //     // console.log(res);
+    //     if (res.data.code == 200) {
+    //       that.orderlist = res.data.data;
+    //       that.showflag = true;
+    //     }
+    //   }).catch(function (error) {
+    //     console.log(error);
+    //   });
 
-    }
+    // }
   },
 }
 </script>

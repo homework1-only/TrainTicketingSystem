@@ -5,7 +5,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import Vant from 'vant';
 import 'vant/lib/index.css';
-import { Lazyload,Collapse,CollapseItem, Toast } from 'vant';
+import { Lazyload,Collapse,CollapseItem,Checkbox } from 'vant';
 import axios from 'axios'
 import qs from 'qs'
 import md5 from 'js-md5'
@@ -19,9 +19,9 @@ Vue.prototype.$axios = axios
 // Vue.prototype.$axios.defaults.baseURL = 'http://localhost:8081/'
     //Lazyload 是 Vue 指令，使用前需要对指令进行注册
 Vue.use(Lazyload)
-Vue.use(Collapse);
-Vue.use(CollapseItem);
-Vue.use(Toast);
+Vue.use(Collapse)
+Vue.use(CollapseItem)
+Vue.use(Checkbox)
 Vue.use(Vant);
 
 Vue.config.productionTip = false

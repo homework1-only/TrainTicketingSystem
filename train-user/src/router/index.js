@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Login from '../views/Login.vue'
+import Login from '../views/Login.vue'
 // import Register from '../views/register.vue'
 // import Tabbar from '../views/tabbar.vue'
 import Index from '../views/Index.vue'
@@ -9,11 +9,9 @@ import Mine from '../views/Mine.vue'
 import Citylist from '../views/CityList.vue'
 import Querytrain from '../views/QueryTrain.vue'
 import Setting from "../views/Setting";
-import About from "../views/About";
-import MyOrder from "../views/MyOrder";
-import Serve from "../views/Serve";
-// import ConfirmOrder from '../views/ConfirmOrder.vue'
-// import SelectUser from '../views/SelectUser.vue'
+import ConfirmOrder from '../views/ConfirmOrder.vue'
+import SelectUser from '../views/SelectUser.vue'
+import AddUser from '../views/addUser.vue'
 // import DetailOrder from '../views/DetailOrder.vue'
 // import ChangeTicket from '../views/ChangeTicket.vue'
 
@@ -22,8 +20,8 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        name: 'index',
-        component: Index
+        name: 'login',
+        component: Login
     },
     // {
     //     path: '/register',
@@ -40,16 +38,16 @@ const routes = [
         name: 'querytrain',
         component: Querytrain
     },
-    // {
-    //     path: '/confirmorder',
-    //     name: 'confirmorder',
-    //     component: ConfirmOrder
-    // },
-    // {
-    //     path: '/selectuser',
-    //     name: 'selectuser',
-    //     component: SelectUser
-    // },
+    {
+        path: '/confirmorder',
+        name: 'confirmorder',
+        component: ConfirmOrder
+    },
+    {
+        path: '/selectuser',
+        name: 'selectuser',
+        component: SelectUser
+    },
     // {
     //     path: '/detailorder',
     //     name: 'detailorder',
@@ -60,11 +58,12 @@ const routes = [
     //     name: 'changeticket',
     //     component: ChangeTicket
     // },
-    // {
-    //     path: '/index',
-    //     name: 'index',
-    //     component: Index,
-    // }, {
+    {
+        path: '/index',
+        name: 'index',
+        component: Index,
+    }, 
+    //{
     //     path: '/order',
     //     name: 'order',
     //     component: Order,
@@ -78,23 +77,11 @@ const routes = [
         path: '/setting',
         name: 'setting',
         component: Setting,
-    },
-    {
-        path: '/about',
-        name: 'about',
-        component: About,
-    },
-    {
-        path: '/myorder',
-        name: 'myorder',
-        component: MyOrder,
-    },
-    {
-        path: '/myserve',
-        name: 'myserve',
-        component: Serve,
-    },
-
+    },{
+        path: '/addUser',
+        name: 'adduser',
+        component: AddUser,
+    }
     // {
     //     path: '/tabbar',
     //     name: 'tabbar',

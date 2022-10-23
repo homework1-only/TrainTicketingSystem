@@ -29,7 +29,7 @@
 export default {
   data() {
     return {
-      showflag:false,
+      showflag:true,
       isLoading: false,
       userlist:[{
         id:'',
@@ -80,7 +80,7 @@ export default {
       }, 1000);
     },
     add(){
-      this.$toast('功能完善中')
+      this.$router.push("addUser");
     },
     back(){
       this.$router.go(-1);
