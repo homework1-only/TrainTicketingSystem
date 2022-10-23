@@ -11,6 +11,7 @@ import Querytrain from '../views/QueryTrain.vue'
 import Setting from "../views/Setting";
 import About from "../views/About";
 import MyOrder from "../views/MyOrder";
+import Serve from "../views/Serve";
 // import ConfirmOrder from '../views/ConfirmOrder.vue'
 // import SelectUser from '../views/SelectUser.vue'
 // import DetailOrder from '../views/DetailOrder.vue'
@@ -87,6 +88,11 @@ const routes = [
         path: '/myorder',
         name: 'myorder',
         component: MyOrder,
+    },
+    {
+        path: '/myserve',
+        name: 'myserve',
+        component: Serve,
     },
 
     // {
