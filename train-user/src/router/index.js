@@ -10,6 +10,7 @@ import Citylist from '../views/CityList.vue'
 import Querytrain from '../views/QueryTrain.vue'
 import Setting from "../views/Setting";
 import About from "../views/About";
+import MyOrder from "../views/MyOrder";
 // import ConfirmOrder from '../views/ConfirmOrder.vue'
 // import SelectUser from '../views/SelectUser.vue'
 // import DetailOrder from '../views/DetailOrder.vue'
@@ -81,7 +82,13 @@ const routes = [
         path: '/about',
         name: 'about',
         component: About,
-    }
+    },
+    {
+        path: '/myorder',
+        name: 'myorder',
+        component: MyOrder,
+    },
+
     // {
     //     path: '/tabbar',
     //     name: 'tabbar',

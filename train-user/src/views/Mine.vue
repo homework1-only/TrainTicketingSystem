@@ -19,7 +19,7 @@
             <div class="username">{{user.name}}</div>
         </div>
         <van-cell is-link @click="editinfo">编辑资料</van-cell>
-        <van-cell is-link @click="showPopup">我的餐饮·特产</van-cell>
+        <van-cell is-link @click="myOrder">我的订单</van-cell>
         <van-cell is-link @click="showPopup">温馨服务</van-cell>
         <van-cell is-link @click="goAbout">关于</van-cell>
         <van-cell is-link @click="logout">登出</van-cell>
@@ -67,6 +67,14 @@
              */
             goAbout() {
                 this.$router.push('/about')
+            },
+            /**
+             * @Author: Kvon
+             * @Date: 2022/10/23 19:31
+             * Description:
+             */
+            myOrder() {
+                this.$router.push('/myorder')
             },
             showPopup() {
                 this.$toast.loading("功能开发中");
