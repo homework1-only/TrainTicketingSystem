@@ -17,12 +17,11 @@
                     :src="user.head"
             />
             <div class="username">{{user.name}}</div>
-            <van-button plain round hairline size="small" type="info" @click="editinfo">编辑资料</van-button>
         </div>
-        <van-cell is-link @click="showPopup">实名核验</van-cell>
+        <van-cell is-link @click="editinfo">编辑资料</van-cell>
         <van-cell is-link @click="showPopup">我的餐饮·特产</van-cell>
         <van-cell is-link @click="showPopup">温馨服务</van-cell>
-        <van-cell is-link @click="showPopup">关于</van-cell>
+        <van-cell is-link @click="goAbout">关于</van-cell>
         <van-cell is-link @click="logout">登出</van-cell>
     </div>
 </template>
@@ -61,6 +60,14 @@
             editinfo() {
                 this.$router.push('/setting')
             },
+            /**
+             * @Author: Kvon
+             * @Date: 2022/10/23 11:04
+             * Description: 关于界面
+             */
+            goAbout() {
+                this.$router.push('/about')
+            },
             showPopup() {
                 this.$toast.loading("功能开发中");
             },
@@ -81,12 +88,11 @@
     }
 
     .van-nav-bar {
-        color: #252525;
         background-color: rgba(0, 170, 238, 0.886);
 
         .van-icon {
             font-size: 20px;
-            color: #252525;
+            color: #fff;
         }
     }
 
@@ -99,13 +105,6 @@
         width: 100%;
         height: 220px;
         position: relative;
-
-        .van-button {
-            background-color: transparent;
-            border-color: white;
-            color: white;
-            margin-top: 8px;
-        }
     }
 
     .van-image {
