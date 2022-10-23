@@ -12,6 +12,9 @@ import Setting from "../views/Setting";
 import ConfirmOrder from '../views/ConfirmOrder.vue'
 import SelectUser from '../views/SelectUser.vue'
 import AddUser from '../views/addUser.vue'
+import MyOrder from "../views/MyOrder";
+import Serve from "../views/Serve";
+import About from "../views/About";
 // import DetailOrder from '../views/DetailOrder.vue'
 // import ChangeTicket from '../views/ChangeTicket.vue'
 
@@ -62,7 +65,7 @@ const routes = [
         path: '/index',
         name: 'index',
         component: Index,
-    }, 
+    },
     //{
     //     path: '/order',
     //     name: 'order',
@@ -77,7 +80,23 @@ const routes = [
         path: '/setting',
         name: 'setting',
         component: Setting,
-    },{
+    },
+    {
+        path: '/myserve',
+        name: 'myserve',
+        component: Serve,
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: About,
+    },
+    {
+        path: '/myorder',
+        name: 'myorder',
+        component: MyOrder,
+    },
+    {
         path: '/addUser',
         name: 'adduser',
         component: AddUser,
@@ -102,7 +121,6 @@ const routes = [
     // }
 
 ]
-
 
 
 const router = new VueRouter({

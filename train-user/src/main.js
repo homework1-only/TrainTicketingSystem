@@ -5,7 +5,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import Vant from 'vant';
 import 'vant/lib/index.css';
-import { Lazyload,Collapse,CollapseItem,Checkbox } from 'vant';
+import { Lazyload,Collapse,CollapseItem,Checkbox,Toast } from 'vant';
 import axios from 'axios'
 import qs from 'qs'
 import md5 from 'js-md5'
@@ -23,6 +23,7 @@ Vue.use(Collapse)
 Vue.use(CollapseItem)
 Vue.use(Checkbox)
 Vue.use(Vant);
+Vue.use(Toast)
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
