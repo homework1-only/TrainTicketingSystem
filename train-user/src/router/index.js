@@ -9,7 +9,7 @@ import Querytrain from '../views/QueryTrain.vue'
 import Setting from "../views/Setting";
 import ConfirmOrder from '../views/ConfirmOrder.vue'
 import SelectUser from '../views/SelectUser.vue'
-import AddUser from '../views/addUser.vue'
+import AddUser from '../views/AddUser.vue'
 import MyOrder from "../views/MyOrder";
 import Serve from "../views/Serve";
 import About from "../views/About";

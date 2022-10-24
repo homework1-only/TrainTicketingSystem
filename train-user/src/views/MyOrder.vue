@@ -59,9 +59,9 @@
                     id: 0,
                     name: 'G8491',
                     startcity: '杭州',
-                    starttime: '2020-07-18 08:14',
+                    starttime: '2022-10-24 16:37',
                     endcity: '绍兴',
-                    endtime: '2020-07-18 08:59',
+                    endtime: '2022-10-24 17:35',
                     price: 80.5
                 }, {
                     id: 1,
