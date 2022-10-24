@@ -48,7 +48,6 @@ const routes = [
         name: 'selectuser',
         component: SelectUser
     },
-
     {
         path: '/index',
         name: 'index',
