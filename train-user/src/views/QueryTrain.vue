@@ -130,14 +130,6 @@ export default {
     this.trainquery();
   },
   methods: {
-    // onRefresh() {
-    //   this.trainquery();
-    //   setTimeout(() => {
-    //     this.$toast('刷新成功');
-    //     this.isLoading = false;
-    //     this.count++;
-    //   }, 1000);
-    // },
     back() {
       this.$router.go(-1);
     },
@@ -148,30 +140,6 @@ export default {
         name: 'confirmorder',
       })
     },
-    // trainquery() {
-    //   // 接口查询
-    //   let that = this;
-    //   this.$axios({
-    //     method: 'get',
-    //     url: '/train/trainticketquery',
-    //     params: {
-    //       startcity: this.startcity,
-    //       endcity: this.endcity,
-    //       // 日期
-    //       traindate: this.traindate,
-    //       traintype: this.traintype
-    //     }
-    //   }).then(function (res) {
-    //     // console.log(res);
-    //     if (res.data.code == 200) {
-    //       that.orderlist = res.data.data;
-    //       that.showflag = true;
-    //     }
-    //   }).catch(function (error) {
-    //     console.log(error);
-    //   });
-
-    // }
   },
 }
 </script>

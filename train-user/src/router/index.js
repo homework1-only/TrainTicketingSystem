@@ -49,16 +49,6 @@ const routes = [
         name: 'selectuser',
         component: SelectUser
     },
-    // {
-    //     path: '/detailorder',
-    //     name: 'detailorder',
-    //     component: DetailOrder
-    // },
-    // {
-    //     path: '/changeticket',
-    //     name: 'changeticket',
-    //     component: ChangeTicket
-    // },
     {
         path: '/index',
         name: 'index',
